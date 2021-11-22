@@ -61,9 +61,6 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.PASSPHRASE }} # Если ваш ssh-ключ защищён фразой-паролем
         script: |
-          sudo docker login -u ${{ secrets.DOCKER_USERNAME }}
-          with:
-            password: ${{ secrets.DOCKER_PASSWORD }}
           # Выполняет pull образа с DockerHub
           sudo docker pull falken565/infra:latest
           #остановка всех контейнеров
